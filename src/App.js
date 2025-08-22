@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import TaskItem from "./components/TaskItem";
 import axios from "axios";
+import Tasks from "./components/tasks";
+import Logo from "./assets/logo.png";
+import "./App.scss";
 
 function App() {
     const [tasks, setTasks] = useState([]);
@@ -18,11 +21,10 @@ function App() {
     };
 
     return (
-        <>
-            {tasks.map((task) => (
-                <TaskItem key={task._id} task={task} />
-            ))}
-        </>
+        <div className="app">
+            <img src={Logo} alt="Logo Task Manager" />
+            <Tasks />
+        </div>
     );
 }
 

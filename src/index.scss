@@ -1,4 +1,4 @@
-$background-color: linear-gradient(266.99deg, #000000 -50%, #00171f 145%);
+$background-color: linear-gradient(266.99deg, #000000 -50%, #001218 145%);
 $primary-text-color: #ffff;
 
 * {
@@ -8,6 +8,8 @@ $primary-text-color: #ffff;
 }
 
 body {
+    width: 100%;
+    height: 100vh;
     margin: 0;
     font-family: "Archivo", sans-serif;
     -webkit-font-smoothing: antialiased;
