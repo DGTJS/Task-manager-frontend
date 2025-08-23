@@ -17,8 +17,7 @@ html {
     flex-direction: column;
     max-width: 40%;
     h1 {
-        font-weight: 500;
-
+        font-weight: 300;
         font-size: 20px;
     }
     h2 {
@@ -40,4 +39,9 @@ html {
             margin-top: 120px;
         }
     }
+}
+.taskItems {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
