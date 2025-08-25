@@ -3,45 +3,9 @@ html {
 }
 .app {
     display: flex;
-    flex-direction: row;
     padding: 40px;
     img {
         width: 150px;
         height: 100px;
     }
-}
-
-.tasks-container {
-    padding: 19px;
-    display: flex;
-    flex-direction: column;
-    max-width: 40%;
-    h1 {
-        font-weight: 300;
-        font-size: 20px;
-    }
-    h2 {
-        margin-bottom: 20px;
-    }
-    h3 {
-        font-size: 18px;
-    }
-
-    .last-taks {
-        flex: 1;
-        overflow-y: hidden;
-        display: flex;
-        flex-direction: column;
-    }
-    .completed-tasks {
-        padding-top: 28px;
-        .tasks-list {
-            margin-top: 120px;
-        }
-    }
-}
-.taskItems {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
 }

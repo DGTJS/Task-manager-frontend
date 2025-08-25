@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 import TaskItem from "./TaskItem";
+import "./Tasks.scss";
 
 const Tasks = () => {
     const [tasks, setTasks] = useState([]);
@@ -10,7 +11,9 @@ const Tasks = () => {
     }, []);
     const fetchTasks = async () => {
         try {
-            const { data } = await axios.get("http://localhost:8000/task");
+            const { data } = await axios.get(
+                "https://task-manager-backend-71en.onrender.com/task"
+            );
             console.log({ data });
             setTasks(data);
         } catch (error) {
