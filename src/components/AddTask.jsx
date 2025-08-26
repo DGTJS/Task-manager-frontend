@@ -6,7 +6,7 @@ import { FaPlus } from "react-icons/fa";
 import axios from "axios";
 import { toast, Flip, ToastContainer } from "react-toastify";
 
-const AddTask = () => {
+const AddTask = ({ fetchTasks }) => {
     const [task, setTask] = useState("");
     const onChange = (e) => {
         setTask(e.target.value);
@@ -37,7 +37,21 @@ const AddTask = () => {
                     isCompleted: false,
                 }
             );
-        } catch (error) {}
+            await fetchTasks();
+            setTask("");
+        } catch (error) {
+            toast.error("Algo deu errado!", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Flip,
+            });
+        }
     };
     return (
         <>
