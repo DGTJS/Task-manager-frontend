@@ -3,7 +3,7 @@ import CustomButton from "./CustomButton";
 import CustomInput from "./CustomInput";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
-// import axios from "axios";
+import axios from "axios";
 import { toast, Flip, ToastContainer } from "react-toastify";
 
 const AddTask = () => {
@@ -30,6 +30,13 @@ const AddTask = () => {
                     }
                 );
             }
+            await axios.post(
+                "https://task-manager-backend-71en.onrender.com/task",
+                {
+                    description: task,
+                    isCompleted: false,
+                }
+            );
         } catch (error) {}
     };
     return (
