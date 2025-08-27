@@ -4,7 +4,7 @@ import CustomInput from "./CustomInput";
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import axios from "axios";
-import { toast, Flip, ToastContainer } from "react-toastify";
+import { toast, Flip } from "react-toastify";
 
 const AddTask = ({ fetchTasks }) => {
     const [task, setTask] = useState("");
@@ -65,7 +65,6 @@ const AddTask = ({ fetchTasks }) => {
                     <FaPlus size={14} />
                 </CustomButton>
             </div>
-            <ToastContainer />
         </>
     );
 };
