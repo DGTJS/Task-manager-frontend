@@ -1,13 +1,26 @@
 import "./TaskItem.scss";
 import { FaTrash } from "react-icons/fa";
 import axios from "axios";
+import { toast, Flip, ToastContainer } from "react-toastify";
 
-const TaskItem = ({ task }) => {
+const TaskItem = ({ task, fetchTasks }) => {
     const DeleteTaskItem = async () => {
         try {
             await axios.delete(
                 `https://task-manager-backend-71en.onrender.com/task/${task._id}`
             );
+            await fetchTasks();
+            toast.success("A tarefa foi removida com sucesso", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Flip,
+            });
         } catch (error) {}
     };
 
