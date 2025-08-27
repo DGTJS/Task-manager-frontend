@@ -1,7 +1,16 @@
 import "./TaskItem.scss";
 import { FaTrash } from "react-icons/fa";
+import axios from "axios";
 
 const TaskItem = ({ task }) => {
+    const DeleteTaskItem = async () => {
+        try {
+            await axios.delete(
+                `https://task-manager-backend-71en.onrender.com/task/${task._id}`
+            );
+        } catch (error) {}
+    };
+
     return (
         <>
             <div className="task-item-container">
@@ -27,7 +36,7 @@ const TaskItem = ({ task }) => {
                         ></span>
                     </label>
                 </div>
-                <div className="delete">
+                <div className="delete" onClick={DeleteTaskItem}>
                     <FaTrash size={18} color="#F97474" />
                 </div>
             </div>
