@@ -39,6 +39,17 @@ const AddTask = ({ fetchTasks }) => {
             );
             await fetchTasks();
             setTask("");
+            toast.success("Tarefa adicionada com sucesso!", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Flip,
+            });
         } catch (error) {
             toast.error("Algo deu errado!", {
                 position: "top-right",
@@ -60,6 +71,7 @@ const AddTask = ({ fetchTasks }) => {
                     label="Adicionar tarefa"
                     value={task}
                     onChange={onChange}
+                    onEnterPress={handleTaskAddition}
                 />
                 <CustomButton onClick={handleTaskAddition}>
                     <FaPlus size={14} />
