@@ -3,6 +3,7 @@ import axios from "axios";
 import TaskItem from "./TaskItem";
 import "./Tasks.scss";
 import AddTask from "./AddTask";
+import { toast } from "react-toastify";
 
 const Tasks = () => {
     const [tasks, setTasks] = useState([]);
@@ -16,8 +17,8 @@ const Tasks = () => {
             );
             console.log({ data });
             setTasks(data);
-        } catch (error) {
-            console.log(error);
+        } catch (_error) {
+            toast.warning("Não foi possivel recuperar as tarefas.");
         }
     };
     return (

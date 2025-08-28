@@ -50,7 +50,7 @@ const AddTask = ({ fetchTasks }) => {
                 theme: "dark",
                 transition: Flip,
             });
-        } catch (error) {
+        } catch (_error) {
             toast.error("Algo deu errado!", {
                 position: "top-right",
                 autoClose: 5000,

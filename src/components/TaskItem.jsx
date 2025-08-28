@@ -21,7 +21,7 @@ const TaskItem = ({ task, fetchTasks }) => {
                 theme: "dark",
                 transition: Flip,
             });
-        } catch (error) {
+        } catch (_error) {
             toast.warning("Algo deu errado.", {
                 position: "top-right",
                 autoClose: 5000,
@@ -57,7 +57,7 @@ const TaskItem = ({ task, fetchTasks }) => {
                 theme: "dark",
                 transition: Flip,
             });
-        } catch (error) {
+        } catch (_error) {
             toast.warning("Algo deu errado.", {
                 position: "top-right",
                 autoClose: 5000,
