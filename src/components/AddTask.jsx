@@ -30,13 +30,10 @@ const AddTask = ({ fetchTasks }) => {
                     }
                 );
             }
-            await axios.post(
-                "https://task-manager-backend-71en.onrender.com/task",
-                {
-                    description: task,
-                    isCompleted: false,
-                }
-            );
+            await axios.post(`${process.env.REACT_APP_API_URL}/task`, {
+                description: task,
+                isCompleted: false,
+            });
             await fetchTasks();
             setTask("");
             toast.success("Tarefa adicionada com sucesso!", {

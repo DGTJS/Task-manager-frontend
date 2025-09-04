@@ -7,7 +7,7 @@ const TaskItem = ({ task, fetchTasks }) => {
     const DeleteTaskItem = async () => {
         try {
             await axios.delete(
-                `https://task-manager-backend-71en.onrender.com/task/${task._id}`
+                `${process.env.REACT_APP_API_URL}}/task/${task._id}`
             );
             await fetchTasks();
             toast.success("A tarefa foi removida com sucesso", {
@@ -39,7 +39,7 @@ const TaskItem = ({ task, fetchTasks }) => {
     const handleTaskCompletionChange = async (e) => {
         try {
             await axios.patch(
-                `https://task-manager-backend-71en.onrender.com/task/${task._id}`,
+                `${process.env.REACT_APP_API_URL}/task/${task._id}`,
                 {
                     isCompleted: e.target.checked,
                 }

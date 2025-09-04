@@ -13,7 +13,7 @@ const Tasks = () => {
     const fetchTasks = async () => {
         try {
             const { data } = await axios.get(
-                "https://task-manager-backend-71en.onrender.com/task"
+                `${process.env.REACT_APP_API_URL}/task`
             );
             setTasks(data);
         } catch (_error) {
