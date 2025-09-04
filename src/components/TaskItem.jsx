@@ -7,7 +7,7 @@ const TaskItem = ({ task, fetchTasks }) => {
     const DeleteTaskItem = async () => {
         try {
             await axios.delete(
-                `${process.env.REACT_APP_API_URL}}/task/${task._id}`
+                `${process.env.REACT_APP_API_URL}/task/${task._id}`
             );
             await fetchTasks();
             toast.success("A tarefa foi removida com sucesso", {
